@@ -1,29 +1,34 @@
-
-var objJSON
+var arrKeys=[]
+var arrValues=[]
 var completeKey
-var arrValues = []
 
 function getInput(){
 
-	let stringJSON
+	//Pegando o valor do input do user em string
+	const stringJSON = document.getElementById('input').value;
 
-		//Pegando o valor do input do user em string
-		stringJSON = document.getElementById('input').value;
+	//chamando a função e passando o paramentro
+	stringToObj(stringJSON);
 
-		//Transformando em objeto
-		objJSON = JSON.parse(stringJSON);
+};
 
+//Transformando string para objeto
+function stringToObj(stringJSON){
+
+	//Transformando em objeto
+ 	const objJSON = JSON.parse(stringJSON);
+	
 	//Chama função	
-	transform();
-}
+	keyAndValue(objJSON);
+
+};
 
 //Separar cabeçalho dos valores
-function transform(){
+function keyAndValue(objJSON){
 
 	let count = 0;
 	let keys;
 	let values;
-	var arrKeys=[]
 
 		//loop conta tamanho array e as infos de cada obj
 		while (count <= objJSON.length -1){
@@ -52,11 +57,12 @@ function transform(){
 		};
 	
 	// Call function
-	insertCSV();
+	insertCSV(completeKey);
 
 };
 
-function insertCSV(){
+//Mostrar user em formato
+function insertCSV(completeKey){
 
 	let header;
 	let rows;
@@ -64,11 +70,11 @@ function insertCSV(){
 
 	//Inserindo o valor de cabeçalho no HTML 
 	header = document.getElementById('header');
-	header.innerHTML = completeKey;
-	
 	//onde será inserido os valores
 	rows = document.getElementById('rows');
 
+	header.innerHTML = completeKey;
+	
 	//Loop para buscar todos os valores dos arrays
 	for (let count = 0; count <= arrValues.length -1; count ++) {
 		
@@ -80,4 +86,5 @@ function insertCSV(){
 		rows.appendChild(newItem);
 
 	};
+
 };

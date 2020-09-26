@@ -1,6 +1,71 @@
-select{
-	height: 200px
+*{
+
+
 }
-option{
-	width: 350px;
+
+body{
+	background-color:#D3D3D3;
+	margin-top: -10vh
+}
+
+h1{
+	text-align: center;
+	font-size: 3vh;
+	margin-top: -3vh;
+}
+
+.flex-center{
+	display: grid;
+	justify-content: center;
+
+}
+
+#conteiner{
+	align-content: center;
+	margin-top: 15vh;
+}
+
+textarea{
+	background-color:#363636;
+	align-content: initial;
+	border-width: 10px;
+	border-radius: 20px;
+	border-color: #4F4F4F;
+	color: white;
+	height: 35vh;
+	width: 55vh;
+}
+
+select{
+	background-color:#363636;
+	align-content: initial;
+	border-width: 10px;
+	border-radius: 20px;
+	border-color: #4F4F4F;
+	color: white;
+	height: 35vh;
+	width: 59vh;
+}
+
+}
+option:hover{
+	color:black;
+	background-color:#363636;
+	color-rendering: black; 
+	border:none;
+}
+
+input{
+	margin-left: 4vh;
+	margin-top: -1vh;
+	height: 7vh;
+	cursor: pointer;
+	width: 50vh;
+	background-color: #708090;
+	border:none;
+	font-size: 2vh;
+}
+
+input:hover{
+	background-color: #BC8F8F;
 }
