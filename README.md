@@ -1,5 +1,7 @@
 # JSON2CSV
 
+<img src="/img/app_json-to-csv.png" alt="Image App">
+
 ## Sobre o projeto:
 Converter Json para CSV sem bibliotecas ou frameworks, afim de fixar o aprendizado base de JS, HTML5 e CSS3.
 
