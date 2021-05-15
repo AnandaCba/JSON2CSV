@@ -1,29 +1,24 @@
+
 var arrKeys=[]
 var arrValues=[]
 var completeKey
 
 function getInput(){
 
-	//Pegando o valor do input do user em string
 	const stringJSON = document.getElementById('input').value;
-
-	//chamando a função e passando o paramentro
+	//chamando a função
 	stringToObj(stringJSON);
-
 };
 
-//Transformando string para objeto
+//String para objeto
 function stringToObj(stringJSON){
 
 	//Transformando em objeto
  	const objJSON = JSON.parse(stringJSON);
-	
-	//Chama função	
 	keyAndValue(objJSON);
-
 };
 
-//Separar cabeçalho dos valores
+//Separa cabeçalho dos valores
 function keyAndValue(objJSON){
 
 	let count = 0;
@@ -51,14 +46,9 @@ function keyAndValue(objJSON){
 
 			//Após organizar a ultima posição do array vai ser o cabeçalho de maior valor.
 			completeKey = arrKeys[0];
-	
 			count ++;
-
 		};
-	
-	// Call function
 	insertCSV(completeKey);
-
 };
 
 //Mostrar user em formato
@@ -72,7 +62,6 @@ function insertCSV(completeKey){
 	header = document.getElementById('header');
 	//onde será inserido os valores
 	rows = document.getElementById('rows');
-
 	header.innerHTML = completeKey;
 	
 	//Loop para buscar todos os valores dos arrays
@@ -84,7 +73,5 @@ function insertCSV(completeKey){
 		newItem.text = `${arrValues[count]}`;
 		//insere o elemento criado em um elemento "select" existente
 		rows.appendChild(newItem);
-
 	};
-
 };
